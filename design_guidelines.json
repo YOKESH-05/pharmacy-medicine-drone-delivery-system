@@ -1,0 +1,179 @@
+{
+  "design_system": {
+    "identity": {
+      "name": "MediFlow",
+      "archetype": "Clinical Swiss",
+      "vibe": "Professional, Efficient, Human-Centric, Sterile but Warm",
+      "principles": [
+        "Clarity is Safety: Information must be legible instantly.",
+        "Warmth in Science: Use soft backgrounds to reduce clinical anxiety.",
+        "Density for Pros: Pharmacists need data density; Patients need guidance."
+      ]
+    },
+    "typography": {
+      "font_family": {
+        "headings": "Manrope, sans-serif",
+        "body": "Inter, sans-serif",
+        "mono": "JetBrains Mono, monospace"
+      },
+      "weights": {
+        "headings": "font-semibold or font-bold",
+        "body": "font-normal or font-medium"
+      },
+      "scale": {
+        "h1": "text-4xl md:text-5xl tracking-tight leading-tight",
+        "h2": "text-3xl tracking-tight",
+        "h3": "text-2xl font-semibold",
+        "body_lg": "text-lg leading-relaxed",
+        "body_base": "text-base leading-relaxed",
+        "caption": "text-sm text-muted-foreground"
+      }
+    },
+    "colors": {
+      "palette": {
+        "primary": {
+          "DEFAULT": "#0284C7",
+          "foreground": "#FFFFFF",
+          "description": "Sky 600 - Trustworthy, clear, medical but modern."
+        },
+        "secondary": {
+          "DEFAULT": "#F0F9FF",
+          "foreground": "#0F172A",
+          "description": "Sky 50 - Used for backgrounds to break up white."
+        },
+        "accent": {
+          "DEFAULT": "#F43F5E",
+          "foreground": "#FFFFFF",
+          "description": "Rose 500 - For alerts, urgent actions, or 'Call Pharmacist' active state."
+        },
+        "background": "#FFFFFF",
+        "surface": "#F8FAFC",
+        "border": "#E2E8F0",
+        "text": {
+          "primary": "#0F172A",
+          "secondary": "#64748B",
+          "muted": "#94A3B8"
+        }
+      },
+      "usage_rules": [
+        "Never use pure black (#000000). Use Slate-900 (#0F172A).",
+        "Pharmacist Dashboard: Use 'Surface' (#F8FAFC) for the main background to reduce eye strain.",
+        "Patient Store: Use White (#FFFFFF) for maximum clarity and product pop.",
+        "Alerts: Use Rose-500 for 'Verification Required' or 'Stock Low'."
+      ]
+    },
+    "layout": {
+      "spacing_system": "Tailwind Scale (p-4, p-6, p-8, p-12)",
+      "grids": {
+        "patient_store": {
+          "type": "Tetris Grid",
+          "classes": "grid grid-cols-1 md:grid-cols-12 gap-6",
+          "hero_span": "col-span-full md:col-span-8 row-span-2",
+          "feature_span": "col-span-full md:col-span-4"
+        },
+        "pharmacist_dashboard": {
+          "type": "High Density Split",
+          "classes": "grid grid-cols-12 gap-4 h-screen overflow-hidden",
+          "sidebar_span": "col-span-2 hidden md:block",
+          "queue_span": "col-span-3 border-r bg-white",
+          "workspace_span": "col-span-7 p-6 overflow-y-auto"
+        }
+      },
+      "containers": {
+        "card": "bg-white border border-slate-200 rounded-xl shadow-sm hover:shadow-md transition-shadow duration-200",
+        "panel": "bg-white border border-slate-200 rounded-lg shadow-none"
+      }
+    },
+    "components": {
+      "buttons": {
+        "primary": "bg-primary text-white hover:bg-primary/90 rounded-full px-6 py-2 font-medium transition-all active:scale-95",
+        "secondary": "bg-secondary text-secondary-foreground hover:bg-secondary/80 rounded-full px-6 py-2 font-medium",
+        "ghost": "hover:bg-slate-100 text-slate-700 rounded-lg px-4 py-2",
+        "pharmacist_action": "rounded-md (not full) for denser UI"
+      },
+      "inputs": {
+        "style": "border-slate-200 focus:ring-2 focus:ring-primary/20 focus:border-primary rounded-lg bg-slate-50/50"
+      },
+      "status_badges": {
+        "verified": "bg-emerald-100 text-emerald-700 border-emerald-200",
+        "pending": "bg-amber-100 text-amber-700 border-amber-200",
+        "rejected": "bg-rose-100 text-rose-700 border-rose-200"
+      }
+    },
+    "visual_enhancers": {
+      "glassmorphism": "backdrop-blur-md bg-white/80 border-b border-white/20 (Use for sticky headers)",
+      "shadows": "shadow-sm for cards, shadow-lg for floating actions (like 'Call Pharmacist')",
+      "borders": "1px solid slate-200 is the primary separator. Avoid heavy dividers."
+    },
+    "motion": {
+      "library": "framer-motion",
+      "transitions": {
+        "page_load": "initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.4 }}",
+        "hover": "transition-transform duration-200 ease-out",
+        "list_item": "staggerChildren: 0.05"
+      }
+    },
+    "assets": {
+      "images": {
+        "pharmacist_hero": {
+          "url": "https://images.unsplash.com/photo-1645066928295-2506defde470?crop=entropy&cs=srgb&fm=jpg&q=85",
+          "alt": "Professional Pharmacist",
+          "usage": "Pharmacist Login / Profile"
+        },
+        "patient_hero": {
+          "url": "https://images.unsplash.com/photo-1581056771107-24ca5f033842?crop=entropy&cs=srgb&fm=jpg&q=85",
+          "alt": "Doctor Patient Consultation",
+          "usage": "Landing Page Hero"
+        },
+        "medicine_generic": {
+          "url": "https://images.unsplash.com/photo-1762328500413-1a4cb2023059?crop=entropy&cs=srgb&fm=jpg&q=85",
+          "alt": "Minimal Medicine Bottle",
+          "usage": "Product Placeholders"
+        },
+        "medicine_blister": {
+          "url": "https://images.pexels.com/photos/4492104/pexels-photo-4492104.jpeg",
+          "alt": "Blister Pack",
+          "usage": "Product List Item"
+        },
+        "call_action": {
+          "url": "https://images.pexels.com/photos/8657293/pexels-photo-8657293.jpeg",
+          "alt": "Pharmacist on Call",
+          "usage": "Call Waiting Screen"
+        }
+      },
+      "icons": "lucide-react (Use: Pill, Stethoscope, Activity, ClipboardCheck, Phone, ShoppingCart)"
+    }
+  },
+  "instructions_to_main_agent": {
+    "general": [
+      "Implement a 'Light Mode' first approach. Medical apps need clarity.",
+      "Use 'Manrope' for all headings. Import it from Google Fonts.",
+      "Use 'Inter' for body text.",
+      "Do not use generic 'blue' (#0000FF). Use the specific Sky-600 defined in colors.",
+      "Ensure all interactive elements have 'data-testid' attributes."
+    ],
+    "patient_flow": [
+      "Landing Page: Use the 'Tetris Grid' layout. Hero image on left, 'Upload Rx' and 'Order Now' blocks on right.",
+      "Cart: Clean, list-based layout. No complex grids for the cart items.",
+      "Order Tracking: Use a vertical timeline with 'lucide-react' icons for stages (Order Placed -> Verified -> Out for Delivery)."
+    ],
+    "pharmacist_flow": [
+      "Dashboard: Split screen. Left 25% is the 'Queue' (list of patients waiting). Right 75% is the 'Workspace' (Rx viewer + Verification buttons).",
+      "Verification: Use large, clear buttons for 'Approve' (Green) and 'Reject' (Red).",
+      "Call Interface: Simulated video call frame. Use the 'call_action' image as the 'video feed' placeholder."
+    ]
+  },
+  "universal_guidelines": [
+    "Dark colors look good when used independently without gradients. DO NOT use dark colors as gradients.",
+    "Don't make generic centered layouts, simplistic gradients, and uniform styling.",
+    "Create depth through layered design elements with z-index hierarchy.",
+    "Use glass-morphism effects with backdrop filters (12-24px blur) for sticky headers.",
+    "You MUST NOT apply universal transition. Eg: 'transition: all'. This results in breaking transforms.",
+    "You MUST NOT center align the app container.",
+    "Always use modern button styles like pill-shaped (patient) or sharp (pharmacist).",
+    "NEVER use AI assistant Emoji characters for icons.",
+    "Every interaction needs micro-animations - hover states, transitions.",
+    "Use 2-3x more spacing than feels comfortable.",
+    "Use 'sonner' for toasts."
+  ]
+}
